@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/")
 public class InventmentsFunndRestServiceImpl implements InvestmentsFundRestService {
@@ -21,7 +23,7 @@ public class InventmentsFunndRestServiceImpl implements InvestmentsFundRestServi
 
     @Override
     @RequestMapping(value = "/calculate", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<CalculationResult> calculate(@RequestBody CalculationDto calculationDto) {
+    public ResponseEntity<CalculationResult> calculate(@Valid @RequestBody CalculationDto calculationDto) {
         return new ResponseEntity<>(calculationService.calculate(calculationDto), HttpStatus.OK);
     }
 }

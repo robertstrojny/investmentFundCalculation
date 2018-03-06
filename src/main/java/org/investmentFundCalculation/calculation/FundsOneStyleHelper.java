@@ -10,13 +10,13 @@ import java.util.List;
 
 public class FundsOneStyleHelper {
     private List<CalculationResultRow> selectedFunds = new ArrayList<>();
-    private Integer percentOfFund;
+    private Integer percent;
 
-    FundsOneStyleHelper(List<Fund> selectedFunds, Integer percentOfFund) {
+    FundsOneStyleHelper(List<Fund> selectedFunds, Integer percent) {
         for(Fund fund : selectedFunds) {
             this.selectedFunds.add(CalculationResultRow.builder().name(fund.getName()).fundType(fund.getType()).build());
         }
-        this.percentOfFund = percentOfFund;
+        this.percent = percent;
     }
 
     public List<CalculationResultRow> calculateResultForOneStyle(Integer value) {
@@ -30,8 +30,8 @@ public class FundsOneStyleHelper {
     }
 
     private void calculatePercents() {
-        BigDecimal percentBase = MathUtils.calculatePercentBase(percentOfFund, selectedFunds.size());
-        BigDecimal percentComplement = MathUtils.calculatePercentComplement(percentBase, percentOfFund, selectedFunds.size());
+        BigDecimal percentBase = MathUtils.calculatePercentBase(percent, selectedFunds.size());
+        BigDecimal percentComplement = MathUtils.calculatePercentComplement(percentBase, percent, selectedFunds.size());
         int count = 0;
         for(CalculationResultRow row : selectedFunds) {
             if(count++ == 0) {
