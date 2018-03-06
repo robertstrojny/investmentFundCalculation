@@ -2,11 +2,9 @@ package org.investmentFundCalculation.calculation;
 
 import org.investmentFundCalculation.calculation.dto.CalculationResultRow;
 import org.investmentFundCalculation.calculation.dto.Fund;
-import org.investmentFundCalculation.calculation.dto.PercentOfFundDto;
 import org.investmentFundCalculation.calculation.utils.MathUtils;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 

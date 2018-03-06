@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.experimental.Builder;
+import lombok.Builder;
 
 @Builder
 @NoArgsConstructor
@@ -12,7 +12,7 @@ import lombok.experimental.Builder;
 public class Fund {
     @Getter
     @Setter
-    private String id;
+    private Long id;
     @Getter
     @Setter
     private String name;

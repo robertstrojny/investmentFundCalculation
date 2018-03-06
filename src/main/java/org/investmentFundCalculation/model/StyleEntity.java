@@ -16,7 +16,7 @@ public class StyleEntity {
 
     @Getter
     @Setter
-    private String name;
+    private StyleEnum name;
 
     @Getter
     @Setter

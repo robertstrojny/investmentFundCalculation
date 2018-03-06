@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class Calculation {
     private List<PercentOfFundDto> percentOfFunds;
 
-    Calculation(List<PercentOfFundDto> percentOfFunds) {
+    public Calculation(List<PercentOfFundDto> percentOfFunds) {
         this.percentOfFunds = percentOfFunds;
     }
 
@@ -22,8 +22,10 @@ public class Calculation {
         List<CalculationResultRow> rows = new ArrayList<>();
         for(PercentOfFundDto percentOfFund : percentOfFunds) {
             List<Fund> selectedFunds = funds.stream().filter(f->f.getType().equals(percentOfFund.getFundType())).collect(Collectors.toList());
-            FundsOneStyleHelper fundsOneStyleHelper = new FundsOneStyleHelper(selectedFunds, percentOfFund.getPercent());
-            rows.addAll(fundsOneStyleHelper.calculateResultForOneStyle(value));
+            if(!selectedFunds.isEmpty()) {
+                FundsOneStyleHelper fundsOneStyleHelper = new FundsOneStyleHelper(selectedFunds, percentOfFund.getPercent());
+                rows.addAll(fundsOneStyleHelper.calculateResultForOneStyle(value));
+            }
         }
         int i = 1;
         for(CalculationResultRow row : rows) {

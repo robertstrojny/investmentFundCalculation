@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 public class CalculationTest {
 
     @Test
@@ -21,12 +19,12 @@ public class CalculationTest {
         Calculation calculation = new Calculation(percentOfFundDtos);
 
         List<Fund> funds = new ArrayList<>();
-        funds.add(Fund.builder().id("1").name("Fundusz Polski 1").type(FundType.POLISH).build());
-        funds.add(Fund.builder().id("2").name("Fundusz Polski 2").type(FundType.POLISH).build());
-        funds.add(Fund.builder().id("3").name("Fundusz Zagraniczny 1").type(FundType.FOREIGN).build());
-        funds.add(Fund.builder().id("4").name("Fundusz Zagraniczny 2").type(FundType.FOREIGN).build());
-        funds.add(Fund.builder().id("5").name("Fundusz Zagraniczny 3").type(FundType.FOREIGN).build());
-        funds.add(Fund.builder().id("6").name("Fundusz Pieniezny 1").type(FundType.FINANCIAL).build());
+        funds.add(Fund.builder().id(1L).name("Fundusz Polski 1").type(FundType.POLISH).build());
+        funds.add(Fund.builder().id(2L).name("Fundusz Polski 2").type(FundType.POLISH).build());
+        funds.add(Fund.builder().id(3L).name("Fundusz Zagraniczny 1").type(FundType.FOREIGN).build());
+        funds.add(Fund.builder().id(4L).name("Fundusz Zagraniczny 2").type(FundType.FOREIGN).build());
+        funds.add(Fund.builder().id(5L).name("Fundusz Zagraniczny 3").type(FundType.FOREIGN).build());
+        funds.add(Fund.builder().id(6L).name("Fundusz Pieniezny 1").type(FundType.FINANCIAL).build());
 
         CalculationResult calculate = calculation.calculate(funds, 10000);
         Assert.assertEquals(6, calculate.getCalculationResultRows().size());
@@ -69,12 +67,12 @@ public class CalculationTest {
         Calculation calculation = new Calculation(percentOfFundDtos);
 
         List<Fund> funds = new ArrayList<>();
-        funds.add(Fund.builder().id("1").name("Fundusz Polski 1").type(FundType.POLISH).build());
-        funds.add(Fund.builder().id("2").name("Fundusz Polski 2").type(FundType.POLISH).build());
-        funds.add(Fund.builder().id("3").name("Fundusz Zagraniczny 1").type(FundType.FOREIGN).build());
-        funds.add(Fund.builder().id("4").name("Fundusz Zagraniczny 2").type(FundType.FOREIGN).build());
-        funds.add(Fund.builder().id("5").name("Fundusz Zagraniczny 3").type(FundType.FOREIGN).build());
-        funds.add(Fund.builder().id("6").name("Fundusz Pieniezny 1").type(FundType.FINANCIAL).build());
+        funds.add(Fund.builder().id(1L).name("Fundusz Polski 1").type(FundType.POLISH).build());
+        funds.add(Fund.builder().id(2L).name("Fundusz Polski 2").type(FundType.POLISH).build());
+        funds.add(Fund.builder().id(3L).name("Fundusz Zagraniczny 1").type(FundType.FOREIGN).build());
+        funds.add(Fund.builder().id(4L).name("Fundusz Zagraniczny 2").type(FundType.FOREIGN).build());
+        funds.add(Fund.builder().id(5L).name("Fundusz Zagraniczny 3").type(FundType.FOREIGN).build());
+        funds.add(Fund.builder().id(6L).name("Fundusz Pieniezny 1").type(FundType.FINANCIAL).build());
 
         CalculationResult calculate = calculation.calculate(funds, 10001);
         Assert.assertEquals(6, calculate.getCalculationResultRows().size());
@@ -117,12 +115,12 @@ public class CalculationTest {
         Calculation calculation = new Calculation(percentOfFundDtos);
 
         List<Fund> funds = new ArrayList<>();
-        funds.add(Fund.builder().id("1").name("Fundusz Polski 1").type(FundType.POLISH).build());
-        funds.add(Fund.builder().id("2").name("Fundusz Polski 2").type(FundType.POLISH).build());
-        funds.add(Fund.builder().id("3").name("Fundusz Polski 3").type(FundType.POLISH).build());
-        funds.add(Fund.builder().id("4").name("Fundusz Zagraniczny 2").type(FundType.FOREIGN).build());
-        funds.add(Fund.builder().id("5").name("Fundusz Zagraniczny 3").type(FundType.FOREIGN).build());
-        funds.add(Fund.builder().id("6").name("Fundusz Pieniezny 1").type(FundType.FINANCIAL).build());
+        funds.add(Fund.builder().id(1L).name("Fundusz Polski 1").type(FundType.POLISH).build());
+        funds.add(Fund.builder().id(2L).name("Fundusz Polski 2").type(FundType.POLISH).build());
+        funds.add(Fund.builder().id(3L).name("Fundusz Polski 3").type(FundType.POLISH).build());
+        funds.add(Fund.builder().id(4L).name("Fundusz Zagraniczny 2").type(FundType.FOREIGN).build());
+        funds.add(Fund.builder().id(5L).name("Fundusz Zagraniczny 3").type(FundType.FOREIGN).build());
+        funds.add(Fund.builder().id(6L).name("Fundusz Pieniezny 1").type(FundType.FINANCIAL).build());
 
         CalculationResult calculate = calculation.calculate(funds, 10000);
         Assert.assertEquals(6, calculate.getCalculationResultRows().size());
