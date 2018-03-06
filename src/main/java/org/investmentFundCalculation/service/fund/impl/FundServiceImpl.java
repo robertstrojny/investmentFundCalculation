@@ -1,7 +1,7 @@
 package org.investmentFundCalculation.service.fund.impl;
 
 import org.investmentFundCalculation.calculation.dto.Fund;
-import org.investmentFundCalculation.dao.FundDao;
+import org.investmentFundCalculation.dao.FundRepository;
 import org.investmentFundCalculation.model.FundEntity;
 import org.investmentFundCalculation.service.fund.FundService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +15,12 @@ import java.util.List;
 public class FundServiceImpl implements FundService {
 
     @Autowired
-    private FundDao fundDao;
+    private FundRepository fundRepository;
 
     @Override
     @Transactional(readOnly = true)
     public List<Fund> findAllFunds() {
-        List<FundEntity> fundEntities = fundDao.findAll();
+        List<FundEntity> fundEntities = fundRepository.findAll();
         List<org.investmentFundCalculation.calculation.dto.Fund> funds = new ArrayList<>();
         fundEntities.forEach(f-> funds.add(Fund.builder()
                 .type(f.getType()).name(f.getName()).id(f.getId()).build()));
