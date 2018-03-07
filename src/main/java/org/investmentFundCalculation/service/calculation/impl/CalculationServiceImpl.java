@@ -3,7 +3,7 @@ package org.investmentFundCalculation.service.calculation.impl;
 import org.investmentFundCalculation.calculation.Calculation;
 import org.investmentFundCalculation.calculation.dto.CalculationResult;
 import org.investmentFundCalculation.calculation.dto.Fund;
-import org.investmentFundCalculation.calculation.dto.PercentOfFundDto;
+import org.investmentFundCalculation.calculation.dto.PercentOfFund;
 import org.investmentFundCalculation.dao.FundRepository;
 import org.investmentFundCalculation.dao.StyleRepository;
 import org.investmentFundCalculation.model.FundEntity;
@@ -38,11 +38,11 @@ public class CalculationServiceImpl implements CalculationService{
         List<Fund> funds = new ArrayList<>();
         fundEntityList.forEach(f-> funds.add(Fund.builder().type(f.getType()).name(f.getName()).id(f.getId()).build()));
         Optional<StyleEntity> styleEntity = styleRepository.findByName(calculationDto.getStyle());
-        List<PercentOfFundDto> percentOfFundDtos = new ArrayList<>();
-        styleEntity.ifPresent(styleEntity1 -> styleEntity1.getPercentOfFundEntities().forEach(p -> percentOfFundDtos.add(
-                PercentOfFundDto.builder().percent(p.getPercent()).fundType(p.getFundType()).build())));
+        List<PercentOfFund> percentOfFunds = new ArrayList<>();
+        styleEntity.ifPresent(styleEntity1 -> styleEntity1.getPercentOfFundEntities().forEach(p -> percentOfFunds.add(
+                PercentOfFund.builder().percent(p.getPercent()).fundType(p.getFundType()).build())));
 
-        Calculation calculation = new Calculation(percentOfFundDtos);
+        Calculation calculation = new Calculation(percentOfFunds);
         return calculation.calculate(funds, calculationDto.getValue());
     }
 }

@@ -12,11 +12,11 @@ public class CalculationTest extends TestData{
 
     @Test
     public void calculateFirstExample(){
-        List<PercentOfFundDto> percentOfFundDtos = new ArrayList<>();
-        percentOfFundDtos.add(PercentOfFundDto.builder().fundType(FundType.POLISH).percent(20).build());
-        percentOfFundDtos.add(PercentOfFundDto.builder().fundType(FundType.FOREIGN).percent(75).build());
-        percentOfFundDtos.add(PercentOfFundDto.builder().fundType(FundType.FINANCIAL).percent(5).build());
-        Calculation calculation = new Calculation(percentOfFundDtos);
+        List<PercentOfFund> percentOfFunds = new ArrayList<>();
+        percentOfFunds.add(PercentOfFund.builder().fundType(FundType.POLISH).percent(20).build());
+        percentOfFunds.add(PercentOfFund.builder().fundType(FundType.FOREIGN).percent(75).build());
+        percentOfFunds.add(PercentOfFund.builder().fundType(FundType.FINANCIAL).percent(5).build());
+        Calculation calculation = new Calculation(percentOfFunds);
 
         List<Fund> funds = getFundsFirstCase();
 
@@ -54,11 +54,11 @@ public class CalculationTest extends TestData{
 
     @Test
     public void calculateSecondExample() {
-        List<PercentOfFundDto> percentOfFundDtos = new ArrayList<>();
-        percentOfFundDtos.add(PercentOfFundDto.builder().fundType(FundType.POLISH).percent(20).build());
-        percentOfFundDtos.add(PercentOfFundDto.builder().fundType(FundType.FOREIGN).percent(75).build());
-        percentOfFundDtos.add(PercentOfFundDto.builder().fundType(FundType.FINANCIAL).percent(5).build());
-        Calculation calculation = new Calculation(percentOfFundDtos);
+        List<PercentOfFund> percentOfFunds = new ArrayList<>();
+        percentOfFunds.add(PercentOfFund.builder().fundType(FundType.POLISH).percent(20).build());
+        percentOfFunds.add(PercentOfFund.builder().fundType(FundType.FOREIGN).percent(75).build());
+        percentOfFunds.add(PercentOfFund.builder().fundType(FundType.FINANCIAL).percent(5).build());
+        Calculation calculation = new Calculation(percentOfFunds);
 
         List<Fund> funds = getFundsFirstCase();
 
@@ -96,11 +96,11 @@ public class CalculationTest extends TestData{
 
     @Test
     public void calculateThirdExample() {
-        List<PercentOfFundDto> percentOfFundDtos = new ArrayList<>();
-        percentOfFundDtos.add(PercentOfFundDto.builder().fundType(FundType.POLISH).percent(20).build());
-        percentOfFundDtos.add(PercentOfFundDto.builder().fundType(FundType.FOREIGN).percent(75).build());
-        percentOfFundDtos.add(PercentOfFundDto.builder().fundType(FundType.FINANCIAL).percent(5).build());
-        Calculation calculation = new Calculation(percentOfFundDtos);
+        List<PercentOfFund> percentOfFunds = new ArrayList<>();
+        percentOfFunds.add(PercentOfFund.builder().fundType(FundType.POLISH).percent(20).build());
+        percentOfFunds.add(PercentOfFund.builder().fundType(FundType.FOREIGN).percent(75).build());
+        percentOfFunds.add(PercentOfFund.builder().fundType(FundType.FINANCIAL).percent(5).build());
+        Calculation calculation = new Calculation(percentOfFunds);
 
         List<Fund> funds = getFundsSecondCase();
 

@@ -3,16 +3,16 @@ package org.investmentFundCalculation.calculation;
 import org.investmentFundCalculation.calculation.dto.CalculationResult;
 import org.investmentFundCalculation.calculation.dto.CalculationResultRow;
 import org.investmentFundCalculation.calculation.dto.Fund;
-import org.investmentFundCalculation.calculation.dto.PercentOfFundDto;
+import org.investmentFundCalculation.calculation.dto.PercentOfFund;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Calculation {
-    private List<PercentOfFundDto> percentOfFunds;
+    private List<PercentOfFund> percentOfFunds;
 
-    public Calculation(List<PercentOfFundDto> percentOfFunds) {
+    public Calculation(List<PercentOfFund> percentOfFunds) {
         this.percentOfFunds = percentOfFunds;
     }
 
@@ -20,7 +20,7 @@ public class Calculation {
         //TODO validation
         CalculationResult calculationResult = new CalculationResult();
         List<CalculationResultRow> rows = new ArrayList<>();
-        for(PercentOfFundDto percentOfFund : percentOfFunds) {
+        for(PercentOfFund percentOfFund : percentOfFunds) {
             List<Fund> selectedFunds = funds.stream().filter(f->f.getType().equals(percentOfFund.getFundType())).collect(Collectors.toList());
             if(!selectedFunds.isEmpty()) {
                 FundsOneStyleHelper fundsOneStyleHelper = new FundsOneStyleHelper(selectedFunds, percentOfFund.getPercent());

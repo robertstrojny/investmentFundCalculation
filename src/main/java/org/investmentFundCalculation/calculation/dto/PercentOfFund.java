@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class PercentOfFundDto {
+public class PercentOfFund {
     @Getter
     private Integer percent;
 
