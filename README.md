@@ -207,3 +207,68 @@ response body :
   "unresolved": 1
 }
 ```
+
+3. set calculateDto 
+
+```
+{
+  "fundList": [
+    1,2,7,3,4,6
+  ],
+  "style": "SAFE",
+  "value": 10000
+}
+```
+
+response body :
+
+```
+{
+  "calculationResultRows": [
+    {
+      "lp": 1,
+      "fundType": "POLISH",
+      "name": "Fundusz Polski 1",
+      "value": 668,
+      "percent": 6.68
+    },
+    {
+      "lp": 2,
+      "fundType": "POLISH",
+      "name": "Fundusz Polski 2",
+      "value": 666,
+      "percent": 6.66
+    },
+    {
+      "lp": 3,
+      "fundType": "POLISH",
+      "name": "Fundusz Polski 3",
+      "value": 666,
+      "percent": 6.66
+    },
+    {
+      "lp": 4,
+      "fundType": "FOREIGN",
+      "name": "Fundusz Zagraniczny 1",
+      "value": 3750,
+      "percent": 37.5
+    },
+    {
+      "lp": 5,
+      "fundType": "FOREIGN",
+      "name": "Fundusz Zagraniczny 2",
+      "value": 3750,
+      "percent": 37.5
+    },
+    {
+      "lp": 6,
+      "fundType": "FINANCIAL",
+      "name": "Fundusz Pieniężny 1",
+      "value": 500,
+      "percent": 5
+    }
+  ],
+  "unresolved": 0
+}
+```
+
