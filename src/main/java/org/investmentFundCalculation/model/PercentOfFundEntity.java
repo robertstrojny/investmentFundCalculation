@@ -1,8 +1,6 @@
 package org.investmentFundCalculation.model;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.investmentFundCalculation.calculation.dto.FundType;
 
 import javax.persistence.Entity;
@@ -12,6 +10,8 @@ import javax.persistence.Id;
 
 @Builder
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class PercentOfFundEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
