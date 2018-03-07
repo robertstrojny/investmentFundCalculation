@@ -8,13 +8,20 @@ Project is created as java application based on
 
 to test application :
 
-`git clone https://github.com/robertstrojny/investmentFundCalculation.git`
+```sh
+git clone https://github.com/robertstrojny/investmentFundCalculation.git
+```
 
 to build application :
 
-`mvn clean install`
+```sh
+mvn clean install
+```
 
 to run application :
 
-`mvn spring-boot:run`
+```sh
+mvn spring-boot:run
+```
+To do tests from documentation go to swagger ui :
 
