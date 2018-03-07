@@ -1,10 +1,6 @@
 package org.investmentFundCalculation.calculation.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.Builder;
+import lombok.*;
 
 import java.math.BigDecimal;
 

@@ -14,8 +14,12 @@ import java.util.List;
 @Service
 public class FundServiceImpl implements FundService {
 
-    @Autowired
     private FundRepository fundRepository;
+
+    @Autowired
+    public FundServiceImpl(FundRepository fundRepository) {
+        this.fundRepository = fundRepository;
+    }
 
     @Override
     @Transactional(readOnly = true)

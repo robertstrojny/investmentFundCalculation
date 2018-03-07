@@ -1,12 +1,13 @@
 package org.investmentFundCalculation.service;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.investmentFundCalculation.model.StyleEnum;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
-
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class CalculationDto {
     @Getter
     @Setter

@@ -22,11 +22,15 @@ import java.util.Optional;
 @Transactional
 public class CalculationServiceImpl implements CalculationService{
 
-    @Autowired
     private FundRepository fundRepository;
 
-    @Autowired
     private StyleRepository styleRepository;
+
+    @Autowired
+    public CalculationServiceImpl(FundRepository fundRepository, StyleRepository styleRepository) {
+        this.fundRepository = fundRepository;
+        this.styleRepository = styleRepository;
+    }
 
     @Override
     public CalculationResult calculate(CalculationDto calculationDto) {

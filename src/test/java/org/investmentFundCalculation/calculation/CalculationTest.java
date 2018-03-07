@@ -8,23 +8,17 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class CalculationTest {
+public class CalculationTest extends TestData{
 
     @Test
-    public void calculateFirstExample() {
+    public void calculateFirstExample(){
         List<PercentOfFundDto> percentOfFundDtos = new ArrayList<>();
         percentOfFundDtos.add(PercentOfFundDto.builder().fundType(FundType.POLISH).percent(20).build());
         percentOfFundDtos.add(PercentOfFundDto.builder().fundType(FundType.FOREIGN).percent(75).build());
         percentOfFundDtos.add(PercentOfFundDto.builder().fundType(FundType.FINANCIAL).percent(5).build());
         Calculation calculation = new Calculation(percentOfFundDtos);
 
-        List<Fund> funds = new ArrayList<>();
-        funds.add(Fund.builder().id(1L).name("Fundusz Polski 1").type(FundType.POLISH).build());
-        funds.add(Fund.builder().id(2L).name("Fundusz Polski 2").type(FundType.POLISH).build());
-        funds.add(Fund.builder().id(3L).name("Fundusz Zagraniczny 1").type(FundType.FOREIGN).build());
-        funds.add(Fund.builder().id(4L).name("Fundusz Zagraniczny 2").type(FundType.FOREIGN).build());
-        funds.add(Fund.builder().id(5L).name("Fundusz Zagraniczny 3").type(FundType.FOREIGN).build());
-        funds.add(Fund.builder().id(6L).name("Fundusz Pieniezny 1").type(FundType.FINANCIAL).build());
+        List<Fund> funds = getFundsFirstCase();
 
         CalculationResult calculate = calculation.calculate(funds, 10000);
         Assert.assertEquals(6, calculate.getCalculationResultRows().size());
@@ -66,13 +60,7 @@ public class CalculationTest {
         percentOfFundDtos.add(PercentOfFundDto.builder().fundType(FundType.FINANCIAL).percent(5).build());
         Calculation calculation = new Calculation(percentOfFundDtos);
 
-        List<Fund> funds = new ArrayList<>();
-        funds.add(Fund.builder().id(1L).name("Fundusz Polski 1").type(FundType.POLISH).build());
-        funds.add(Fund.builder().id(2L).name("Fundusz Polski 2").type(FundType.POLISH).build());
-        funds.add(Fund.builder().id(3L).name("Fundusz Zagraniczny 1").type(FundType.FOREIGN).build());
-        funds.add(Fund.builder().id(4L).name("Fundusz Zagraniczny 2").type(FundType.FOREIGN).build());
-        funds.add(Fund.builder().id(5L).name("Fundusz Zagraniczny 3").type(FundType.FOREIGN).build());
-        funds.add(Fund.builder().id(6L).name("Fundusz Pieniezny 1").type(FundType.FINANCIAL).build());
+        List<Fund> funds = getFundsFirstCase();
 
         CalculationResult calculate = calculation.calculate(funds, 10001);
         Assert.assertEquals(6, calculate.getCalculationResultRows().size());
@@ -114,13 +102,7 @@ public class CalculationTest {
         percentOfFundDtos.add(PercentOfFundDto.builder().fundType(FundType.FINANCIAL).percent(5).build());
         Calculation calculation = new Calculation(percentOfFundDtos);
 
-        List<Fund> funds = new ArrayList<>();
-        funds.add(Fund.builder().id(1L).name("Fundusz Polski 1").type(FundType.POLISH).build());
-        funds.add(Fund.builder().id(2L).name("Fundusz Polski 2").type(FundType.POLISH).build());
-        funds.add(Fund.builder().id(3L).name("Fundusz Polski 3").type(FundType.POLISH).build());
-        funds.add(Fund.builder().id(4L).name("Fundusz Zagraniczny 2").type(FundType.FOREIGN).build());
-        funds.add(Fund.builder().id(5L).name("Fundusz Zagraniczny 3").type(FundType.FOREIGN).build());
-        funds.add(Fund.builder().id(6L).name("Fundusz Pieniezny 1").type(FundType.FINANCIAL).build());
+        List<Fund> funds = getFundsSecondCase();
 
         CalculationResult calculate = calculation.calculate(funds, 10000);
         Assert.assertEquals(6, calculate.getCalculationResultRows().size());
