@@ -78,6 +78,7 @@ It returns list off funds:
 ```
 
 Test cases from documentation (use inventments-funnd-rest-service-impl service):
+
 1. set calculateDto 
 
 ```
@@ -90,8 +91,184 @@ Test cases from documentation (use inventments-funnd-rest-service-impl service):
 }
 ```
 
-return value :
+response body :
 
 ```
+{
+  "calculationResultRows": [
+    {
+      "lp": 1,
+      "fundType": "POLISH",
+      "name": "Fundusz Polski 1",
+      "value": 1000,
+      "percent": 10
+    },
+    {
+      "lp": 2,
+      "fundType": "POLISH",
+      "name": "Fundusz Polski 2",
+      "value": 1000,
+      "percent": 10
+    },
+    {
+      "lp": 3,
+      "fundType": "FOREIGN",
+      "name": "Fundusz Zagraniczny 1",
+      "value": 2500,
+      "percent": 25
+    },
+    {
+      "lp": 4,
+      "fundType": "FOREIGN",
+      "name": "Fundusz Zagraniczny 2",
+      "value": 2500,
+      "percent": 25
+    },
+    {
+      "lp": 5,
+      "fundType": "FOREIGN",
+      "name": "Fundusz Zagraniczny 3",
+      "value": 2500,
+      "percent": 25
+    },
+    {
+      "lp": 6,
+      "fundType": "FINANCIAL",
+      "name": "Fundusz Pieniężny 1",
+      "value": 500,
+      "percent": 5
+    }
+  ],
+  "unresolved": 0
+}
+```
+
+
+2. set calculateDto 
 
 ```
+{
+  "fundList": [
+    1,2,3,4,5,6
+  ],
+  "style": "SAFE",
+  "value": 10001
+}
+```
+
+response body :
+
+```
+{
+  "calculationResultRows": [
+    {
+      "lp": 1,
+      "fundType": "POLISH",
+      "name": "Fundusz Polski 1",
+      "value": 1000,
+      "percent": 10
+    },
+    {
+      "lp": 2,
+      "fundType": "POLISH",
+      "name": "Fundusz Polski 2",
+      "value": 1000,
+      "percent": 10
+    },
+    {
+      "lp": 3,
+      "fundType": "FOREIGN",
+      "name": "Fundusz Zagraniczny 1",
+      "value": 2500,
+      "percent": 25
+    },
+    {
+      "lp": 4,
+      "fundType": "FOREIGN",
+      "name": "Fundusz Zagraniczny 2",
+      "value": 2500,
+      "percent": 25
+    },
+    {
+      "lp": 5,
+      "fundType": "FOREIGN",
+      "name": "Fundusz Zagraniczny 3",
+      "value": 2500,
+      "percent": 25
+    },
+    {
+      "lp": 6,
+      "fundType": "FINANCIAL",
+      "name": "Fundusz Pieniężny 1",
+      "value": 500,
+      "percent": 5
+    }
+  ],
+  "unresolved": 1
+}
+```
+
+3. set calculateDto 
+
+```
+{
+  "fundList": [
+    1,2,7,3,4,6
+  ],
+  "style": "SAFE",
+  "value": 10000
+}
+```
+
+response body :
+
+```
+{
+  "calculationResultRows": [
+    {
+      "lp": 1,
+      "fundType": "POLISH",
+      "name": "Fundusz Polski 1",
+      "value": 668,
+      "percent": 6.68
+    },
+    {
+      "lp": 2,
+      "fundType": "POLISH",
+      "name": "Fundusz Polski 2",
+      "value": 666,
+      "percent": 6.66
+    },
+    {
+      "lp": 3,
+      "fundType": "POLISH",
+      "name": "Fundusz Polski 3",
+      "value": 666,
+      "percent": 6.66
+    },
+    {
+      "lp": 4,
+      "fundType": "FOREIGN",
+      "name": "Fundusz Zagraniczny 1",
+      "value": 3750,
+      "percent": 37.5
+    },
+    {
+      "lp": 5,
+      "fundType": "FOREIGN",
+      "name": "Fundusz Zagraniczny 2",
+      "value": 3750,
+      "percent": 37.5
+    },
+    {
+      "lp": 6,
+      "fundType": "FINANCIAL",
+      "name": "Fundusz Pieniężny 1",
+      "value": 500,
+      "percent": 5
+    }
+  ],
+  "unresolved": 0
+}
+```
+
