@@ -6,7 +6,7 @@ Project is created as java application based on
 - h2 memory database,
 - Swagger2 as ui for testing REST services
 
-to test application :
+to download application :
 
 ```sh
 git clone https://github.com/robertstrojny/investmentFundCalculation.git
