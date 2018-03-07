@@ -76,3 +76,22 @@ It returns list off funds:
   }
 ]
 ```
+
+Test cases from documentation (use inventments-funnd-rest-service-impl service):
+1. set calculateDto 
+
+```
+{
+  "fundList": [
+    1,2,3,4,5,6
+  ],
+  "style": "SAFE",
+  "value": 10000
+}
+```
+
+return value :
+
+```
+
+```
